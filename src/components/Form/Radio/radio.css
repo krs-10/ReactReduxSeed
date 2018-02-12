@@ -1,0 +1,99 @@
+.root{
+	composes: input from './../form.css';
+	display: flex; 
+	flex-flow: row wrap; 
+	align-items: center; 
+	.label{
+		padding: 0 0 0 var(--size); 
+		font-weight: 400; 
+	}
+	.label, input{
+		flex: 0 1 auto; 
+	}
+	input{
+		--width: 0.2rem; 
+		--outset: -0.2rem;
+		--background: var(--white);
+		--border: var(--gray-4);
+
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		-moz-appearance: none;
+
+		position: relative; 
+		width: 1em; 
+		height: 1em; 
+
+		background: var(--background);
+		border-style: solid; 
+		&:disabled, &.disabled{
+			+ .label{
+				color: var(--color, var(--gray-5));
+			}
+		}
+		&:focus, &.focus{
+			outline: none; 
+		}
+		&, &:before, &:after{	
+			border-width: var(--width);
+			border-color: var(--border);
+			border-radius: 50%; 
+		}
+		&:before, &:after{
+			content: "";
+			display: inline-block; 
+			position: absolute; 
+
+			top: var(--pseudo-width);
+			bottom: var(--pseudo-width);
+			left: var(--pseudo-width);
+			right: var(--pseudo-width);
+		}
+		&:before{
+			--pseudo-width: var(--outset);
+		}
+		&:after{
+			--pseudo-width: var(--width);
+		}
+		/* Checked */
+		&:checked, &.checked{
+			--background: var(--blue-5); 
+			--border: var(--blue-5);
+			&:after{
+				--background: var(--white);
+				background: var(--background);
+			}
+			&:invalid, &.error{
+				--background: var(--red-1);
+			}
+		}
+		/* Focus */
+		&:focus:before, &.focus:before, &:active:before, &.active:before{
+			border-style: solid; 
+		}
+		&:focus:before, &.focus:before{
+			--border: var(--blue-5);
+		}
+		/* Active */
+		&:active:before, &.active:before{
+			--border: var(--pink-1);
+		}
+
+		/* Disabled */
+		&:disabled, &.disabled{
+			--background: var(--gray-1); 
+			--border: var(--gray-4); 
+			&:after{
+				--background: var(--gray-5);
+			}
+		}
+
+		/* Error */
+		&:invalid, &.error{
+			--border: var(--red-1); 
+
+			outline: initial; 
+			border-style: solid; 
+		}
+	}
+}

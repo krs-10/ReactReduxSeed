@@ -1,0 +1,140 @@
+:root{
+	--border: 0.2rem;
+}
+
+.root, .root:after{
+	opacity: 0; 
+	top: 0; 
+	left: 0;
+	position: absolute; 
+}
+
+.root{
+	
+	--background: var(--blue-9);
+	--easing: var(--ease-out-quad);
+	--duration: 200ms; 
+	
+	position: absolute; 
+	transform: var(--transform);
+	background: var(--background);
+	color: var(--white);
+	padding: var(--size);
+	z-index: -1; 
+	width: 100%; 
+	max-width: calc(var(--size) * 25); 
+	bottom: auto; 
+	right: auto; 
+	box-shadow: none; 
+	transition: opacity var(--duration) var(--easing), transform var(--duration) var(--easing);
+	&:after{
+		content: "";
+		display: block; 
+		width: var(--size); 
+		height: var(--size); 
+		border-color: var(--background);
+		border-style: solid; 
+		background: var(--background);
+		bottom: 0;
+		right: 0;
+		transition: all 0ms var(--easing) var(--duration);
+		transform: var(--transform-after);
+	}
+	&.active, .hoverable:hover &, .hoverable:focus &{
+		opacity: 1;
+		z-index: 2; 
+		transform: var(--transform-active);
+		&:after{
+			transition: all var(--duration) var(--easing);
+			opacity: 1; 
+		}
+	}
+}
+
+.container{
+	position: relative; 
+	display: inline-block; 
+}
+
+
+.top, .bottom{
+	left: 50%; 
+	right: auto; 
+	&:after{
+		left: inherit; 
+		right: inherit; 
+	}
+}
+
+.top{
+	--transform: translate3d(-50%, -95%, 0);
+	--transform-after: rotate(45deg) translate(-50%, 0);
+	--transform-active: translate3d(-50%, -100%, 1px);
+
+	top: 0; 
+	bottom: auto; 
+	margin: -var(--size-double) 0 0 0;
+	&:after{
+		top: auto; 
+		bottom: -var(--size);
+		border-width:  0 var(--border) var(--border) 0; 
+	}
+}
+
+.bottom{
+	--transform: translate3d(-50%, 95%, 0);
+	--transform-after: rotate(45deg) translate(-var(--size), 0);
+	--transform-active: translate3d(-50%, 100%, 1px);
+	top: auto; 
+	bottom: 0; 
+	
+	margin: 0 0 -var(--size-double) 0;
+	&:after{
+		top: var(--border); 
+		bottom: auto;
+		left: inherit;
+		right: inherit;  
+		border-width:  var(--border) 0 0 var(--border); 
+	}
+}
+
+.left, .right{
+	top: 50%;
+	bottom: auto;
+	&:after{
+		top: inherit; 
+		bottom: inherit; 
+	} 
+}
+.left{
+	--transform: translate3d(-95%, -50%, 0);
+	--transform-after: rotate(45deg) translate(-var(--size-half), 0);
+	--transform-active: translate3d(-100%, -50%, 1px);
+	top: 50%; 
+	bottom: auto; 
+	left: -var(--size); 
+	right: auto; 
+	margin: -var(--border) 0 0 -var(--size); 
+	&:after{
+		left: auto; 
+		right: -var(--size);
+		border-width: var(--border) var(--border) 0 0;
+	}
+}
+
+.right{
+	--transform: translate3d(95%, -50%, 0);
+	--transform-after: rotate(45deg) translate(0, -var(--size-half));
+	--transform-active: translate3d(100%, -50%, 1px);
+
+	left: auto; 
+	right: -var(--size); 
+	margin: -var(--border) -var(--size) 0 0; 		
+	&:after{
+		left: -var(--size);
+		right: auto; 
+		border-width: 0 0 var(--border) var(--border);
+	}
+}
+
+

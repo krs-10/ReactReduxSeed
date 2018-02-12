@@ -1,0 +1,44 @@
+/* @import 'styles/variables.css'; */
+
+.root{
+	color: var(--color, var(--blue-9));
+	background: var(--background, var(--gray-3));
+	
+	padding: var(--size-quarter) var(--size);
+	font-weight: 600; 
+	display: inline-block;
+}
+
+.default{
+	--background: var(--gray-3);
+}
+
+.info{
+	--background: var(--blue-3);
+}
+
+.error{
+	--background: var(--orange-2);
+}
+
+.warning{
+	--background: var(--yellow-2);
+}
+
+.success{
+	--background: var(--green-1);
+}
+
+
+
+.default,
+.info,
+.error, 
+.warning, 
+.success{
+	composes: root; 
+	background: var(--background);
+}
+
+
+

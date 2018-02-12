@@ -1,0 +1,78 @@
+
+
+
+
+.input, input.input{
+ 	-webkit-appearance: none;
+ 	-ms-appearance: none;
+ 	-moz-appearance: none;
+	
+	
+ 	flex: 1 0 auto;
+
+ 	--border-color: var(--gray-4);
+ 	--placeholder-color: var(--gray-5);
+ 	--box-shadow: transparent; 
+ 	
+ 	padding: var(--size);
+ 	border: 1px solid; 
+ 	border-color: var(--border-color);
+
+	box-shadow: inset 0 -2px var(--box-shadow);
+	&:focus, &:global(.focus){
+		--box-shadow: var(--blue-5);
+		outline: none; 
+	}
+
+	&:disabled, &:global(.disabled){
+		--box-shadow: var(--gray-3);
+		color: var(--gray-5);
+		background: var(--gray-1);
+	}
+
+	&:invalid, &:global(.error){
+		--box-shadow: var(--red-1);
+	}
+	&::-webkit-input-placeholder{
+		color: var(--placeholder-color);
+	}
+	&::-moz-placeholder{
+		color: var(--placeholder-color);
+	}
+	&:-ms-input-placeholder{
+		color: var(--placeholder-color);
+	}
+}
+
+ .wrapper{
+ 	display: flex; 
+ }
+
+.prefix, .suffix{
+	--box-shadow: transparent; 
+
+	background: var(--gray-1);
+	border: 1px solid var(--gray-4);
+	padding: var(--size);
+	flex: 0 1 auto;
+	box-shadow: inset 0 -2px var(--box-shadow); 
+
+	.input:invalid ~ &, .input:global(.error) ~ &{
+		--box-shadow: var(--red-1);
+	}
+	.input:focus ~ &, .input:global(.focus) ~ &{
+		--box-shadow: var(--blue-5);
+	}
+}
+.prefix{
+	border-right: none; 
+	order: -1; 
+}
+.suffix{
+	border-left: none; 
+}
+
+
+
+
+

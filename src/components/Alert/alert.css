@@ -1,0 +1,77 @@
+/* @import 'styles/variables.css'; */
+
+.root{
+	color: var(--color, var(--blue-9));
+	background: var(--background, var(--blue-3));
+	width: 100%;
+	padding: var(--size);
+	font-weight: 600; 
+	transition: all 200ms var(--out-quad);
+	.container &{
+		visibility: hidden;
+		opacity: 0;
+		transform: translateY(-var(--size-double));
+	}
+	.container .active &{
+		visibility: visible; 
+		opacity: 1;
+		transform: translateY(0);
+		transition: all 200ms var(--out-quad),
+					padding 0ms var(--out-quad) 200ms,
+					opacity 100ms var(--out-quad);
+	}
+}
+
+.default{
+	--background: var(--blue-3);
+}
+
+.error{
+	--background: var(--orange-2);
+}
+
+.warning{
+	--background: var(--yellow-2);
+}
+
+.success{
+	--background: var(--green-1);
+}
+
+.dismissable, .active{
+	opacity: 1; 
+	visibility: visible; 
+	backface-visibility: hidden;
+	transform: translateY(0);
+	/* composes: user from 'styles/animation.css'; */
+}
+
+.closed{
+	visibility: hidden;
+	opacity: 0;
+	transform: translateY(-var(--size-double));
+}
+
+.default,
+.error, 
+.warning, 
+.success, 
+.dismissable, 
+.closed{
+	composes: root; 
+	background: var(--background);
+}
+
+.button{
+	position: relative; 
+	float: right;
+	cursor: pointer; 
+	padding: 0 var(--size-half);
+	margin: 0 -var(--size-half) 0 var(--size-half);
+	-webkit-appearance: none; 
+	background: none; 
+	border: none;
+/* 	composes: close from 'styles/icons.css'; */
+}
+
+

@@ -1,0 +1,6 @@
+.root{
+	composes: input from './../Input/input.css';
+}
+
+
+

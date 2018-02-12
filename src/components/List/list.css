@@ -1,0 +1,30 @@
+
+.root{
+	padding-left: var(--size);
+}
+
+.root .root{
+	margin-top: 0; 
+	margin-bottom: 0;
+}
+
+.item{
+	padding-top: var(--size-half);
+}
+
+.unordered{
+	list-style-type: disc; 
+}
+
+.ordered{
+	.ordered{
+		list-style-type: upper-latin; 
+		.ordered{
+			list-style-type: decimal; 
+		}
+	}
+}
+
+.plain{
+	list-style-type: none; 
+}

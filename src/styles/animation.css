@@ -1,0 +1,27 @@
+/* @import 'styles/variables.css'; */
+
+.system{
+/* 	&.in{
+		--duration: 500ms; 
+		--easing: var(--ease-in-quad);
+		--test: yellow;
+	}
+	&.out{
+		--duration: 200ms; 
+		--easing: var(--ease-out-quad);
+		--test: purple;
+	} */
+}
+
+.user{
+	&.out{
+		--duration: 500ms; 
+		--easing: var(--ease-in-quad);
+
+	}
+	&.in{
+		--duration: 200ms; 
+		--easing: var(--ease-out-quad);
+
+	}
+}

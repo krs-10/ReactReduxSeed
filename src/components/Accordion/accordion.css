@@ -1,0 +1,65 @@
+/* @import 'styles/variables.css'; */
+
+
+.root{
+	--background: var(--white);
+	--shadow: var(--gray-3);
+
+	background: var(--background);
+	border-bottom: 1px solid var(--border);
+	box-shadow: 0 3px var(--shadow);
+	width: 100%; 
+}
+
+.panel, .header, .content, .root{
+	--border: var(--gray-4);
+}
+
+.panel{
+	border: 1px solid var(--border);
+	border-bottom: none; 
+}
+
+
+.header{
+	--background: var(--gray-1);
+
+	background: var(--background);
+	padding: var(--size);
+	font-size: var(--h2);
+	cursor: pointer; 
+	outline: none; 
+}
+
+.title, .button{
+	display: inline-block; 
+	vertical-align: middle; 
+}
+
+.button{
+	padding: var(--size) 0;
+	width: var(--size-triple);
+	margin-right: var(--size);
+	font-size: var(--p);
+	position: relative; 
+	-webkit-appearance: none; 
+	border: none; 
+	background: none; 
+	outline: none; 
+/* 	composes: collapse from 'styles/icons.css'; */
+}
+
+.content{
+	border-top: 1px solid var(--border);
+	padding: var(--size-double);
+}
+
+/* Stateful */
+.closed{
+	.content{
+		display: none; 
+	}
+	.button{
+		transform: rotate(180deg);
+	}
+}
