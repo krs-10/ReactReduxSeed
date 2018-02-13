@@ -40,7 +40,8 @@ const baseConfig = {
       'components': path.resolve(__dirname, "src/components"), 
       'containers': path.resolve(__dirname, "src/containers"),
       'modules': path.resolve(__dirname, "src/modules"),
-      // 'styles': path.resolve(__dirname, "src/styles"),
+      'pages': path.resolve(__dirname, "src/pages"),
+      'styles': path.resolve(__dirname, "src/styles"),
     }
   },
   context: path.resolve(__dirname, 'src'),
