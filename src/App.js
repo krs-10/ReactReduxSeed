@@ -1,15 +1,21 @@
 const path = require('path');
-
-import React, { Component } from 'react';
+import { Route } from 'react-router';
 import { connect } from 'react-redux';
-import { Route, NavLink, Switch, withRouter } from 'react-router-dom';
+import { ConnectedRouter } from 'react-router-redux'
+import { history } from './store';
+
+import Page from 'pages/Page';
 
 const App = (props) => {
 	return (
-		<div>
-			Hey
-		</div>
-	)
+		<ConnectedRouter history={history}>
+	      <div>
+	        <Route exact path="/" component={Page}/>
+	        <Route path="/about" component={Page}/>
+	        <Route path="/topics" component={Page}/>
+	      </div>
+	     </ConnectedRouter>
+	  );
 }
 
 export default App; 

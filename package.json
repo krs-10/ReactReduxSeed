@@ -7,6 +7,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "start": "webpack-dev-server --watch --colors",
     "prod": "NODE_ENV='production' webpack -p",
     "dev": "webpack-dev-server --watch --colors"
   },
@@ -58,7 +59,7 @@
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-router-redux": "^5.0.0-alpha.8",
+    "react-router-redux": "^5.0.0-alpha.9",
     "react-svg-loader": "^2.2.0-alpha.038ff855",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",

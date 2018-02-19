@@ -98,11 +98,10 @@ const baseConfig = {
     envPlugin,
     new HtmlWebpackPlugin({template: 'index.html'}),
     new CopyWebpackPlugin([{from: 'assets', to: 'assets'}]),
-    // new SpriteLoaderPlugin(),
     new webpack.optimize.CommonsChunkPlugin({ names: ["app", "vendor"] }),
     new webpack.ProvidePlugin({
       'React': 'react',
-      'Component': 'react',
+      'Component': ['react', 'Component'],
       'PropTypes': 'prop-types',
       'cx': 'classnames/bind',
       'CSSModules': 'react-css-modules'
