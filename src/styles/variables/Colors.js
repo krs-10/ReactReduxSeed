@@ -1,4 +1,6 @@
-const Colors = module.exports = {
+require("@babel/polyfill");
+
+const DefaultColors = {
 	"white": "#ffffff",
 	"gray-1": "#F4F6F6", 
 	"gray-2": "#EAEDED", 
@@ -22,13 +24,25 @@ const Colors = module.exports = {
 	"orange-1": "#ffe7e1",
 	"orange-2": "#FF6138",
 	"red-1": "#CF3535",
-	"pink-1": "#A90067",
-	"root-color": "#002E36",
+	"pink-1": "#A90067"
+}
+
+const CustomColors = {
+	"blue-1": "#82D8E3"
+}
+
+
+// const Colors = module.exports = {
+// 	DefaultColors
+// }
+
+const Colors = module.exports = {
+	...DefaultColors, 
+	CustomColors
 };
 
 
 
-// export default Colors; 
 
 
 

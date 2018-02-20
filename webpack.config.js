@@ -23,7 +23,6 @@ var vendors = [
   'prop-types',
   'redux', 
   'react-redux', 
-  'axios',
   'redux-thunk',
   'react-router-redux',
   'history',

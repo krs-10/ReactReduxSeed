@@ -4,15 +4,13 @@ class Navbar extends Component{
 	state = {};
 	render() {
 		const { className, children, ...rest } = this.props; 
-		console.log("Navbar - rest :", rest);
 		const cxb = cx.bind(styles);
 		const classes = cxb(
 			className
 		);
 
 		return (
-			<div className={classes} {...rest}>
-			Hey these are some kids
+			<div styleName="root" className={classes} {...rest}>
 				{ children }
 			</div>
 		)

@@ -6,24 +6,14 @@
   "author": "Kristen Overberg",
   "license": "MIT",
   "private": true,
+  "engines" : { "node" : ">=8.3.0" },
   "scripts": {
     "start": "webpack-dev-server --watch --colors",
     "prod": "NODE_ENV='production' webpack -p",
     "dev": "webpack-dev-server --watch --colors"
   },
   "dependencies": {
-    "axios": "^0.17.1",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-flow": "^6.23.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
+    "@babel/polyfill": "^7.0.0-beta.40",
     "classnames": "^2.2.5",
     "compression-webpack-plugin": "^1.0.0",
     "copy-webpack-plugin": "^4.0.1",
@@ -32,7 +22,6 @@
     "cssnano": "^4.0.0-rc.2",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.6",
-    "flow-bin": "^0.64.0",
     "history": "^4.7.2",
     "html-webpack-plugin": "^2.30.1",
     "http-server": "^0.11.1",
@@ -69,8 +58,17 @@
     "uglifyjs-webpack-plugin": "^1.1.6",
     "url-loader": "^0.6.2",
     "webpack": "^3.5.6",
-    "webpack-bundle-analyzer": "^2.9.0",
-    "webpack-dev-server": "^2.11.1",
     "webpack-merge": "^4.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/plugin-transform-spread": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
+    "@babel/preset-react": "^7.0.0-beta.40",
+    "@babel/preset-stage-0": "^7.0.0-beta.40",
+    "babel-loader": "^8.0.0-beta.0",
+    "flow-bin": "^0.64.0",
+    "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-dev-server": "^2.11.1"
   }
 }

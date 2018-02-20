@@ -1,4 +1,4 @@
-require('babel-polyfill');
+// require('@babel/polyfill');
 
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
@@ -12,14 +12,6 @@ import 'styles/normalize.css';
 import 'styles/layout.css';
 import 'styles/typography.css';
 
-// render(
-// 	<Provider store={store}>
-// 		<ConnectedRouter history={history}>
-// 	  		<App />
-// 	  	</ConnectedRouter>
-//   	</Provider>,
-//   document.getElementById('root')
-// );
 
 render(
 	<Provider store={store}>
