@@ -1,0 +1,16 @@
+.root, :global(.link){
+	color: var(--blue-5);
+	text-decoration: none; 
+	font-weight: 600; 
+	&:hover{
+		color: var(--blue-6);
+	}
+	&:focus{
+		color: var(--blue-5);
+		text-decoration: underline; 
+	}
+	&:active{
+		color: var(--pink-1);
+	}
+}
+

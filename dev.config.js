@@ -23,7 +23,8 @@ const inlineCssRule = {
           modules: true,
           localIdentName: '[name]_[local]',
           alias: {
-            'styles': path.resolve(__dirname, "src/styles")
+            'styles': path.resolve(__dirname, "src/styles"),
+            'lib': path.resolve(__dirname, "lib")
           }
         }
     },
@@ -56,7 +57,7 @@ const devConfig = {
   devtool: 'cheap-source-map',
   module: {
     rules: [
-      extractedCssRule
+      inlineCssRule
     ],
   },
   plugins: [

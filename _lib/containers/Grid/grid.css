@@ -24,7 +24,7 @@
 	max-width: var(--flex-basis, none); */
 	flex-basis: auto; 
 	max-width: none; 
-	padding: 0 var(--size-half) var(--size);
+	padding: 0 var(--size-half);
 }
 
 .offset-left{

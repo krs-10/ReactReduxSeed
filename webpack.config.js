@@ -39,8 +39,9 @@ const baseConfig = {
       'components': path.resolve(__dirname, "src/components"), 
       'containers': path.resolve(__dirname, "src/containers"),
       'modules': path.resolve(__dirname, "src/modules"),
-      'pages': path.resolve(__dirname, "src/pages"),
+      'routes': path.resolve(__dirname, "src/routes"),
       'styles': path.resolve(__dirname, "src/styles"),
+      'lib': path.resolve(__dirname, "lib")
     }
   },
   context: path.resolve(__dirname, 'src'),
@@ -101,6 +102,7 @@ const baseConfig = {
     new webpack.ProvidePlugin({
       'React': 'react',
       'Component': ['react', 'Component'],
+      'Fragment': ['react', 'Fragment'],
       'PropTypes': 'prop-types',
       'cx': 'classnames/bind',
       'CSSModules': 'react-css-modules'

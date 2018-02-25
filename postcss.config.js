@@ -24,9 +24,12 @@ const postcssConfig = module.exports = {
 		'postcss-nesting': {},
 		'postcss-nested': {},
 		'postcss-color-function': {},
-		'postcss-custom-properties': {variables: customProperties, warnings: false},
+
+		'postcss-custom-properties': {variables: customProperties, warnings: false, preserve: false},
 		'postcss-custom-media': {extensions: Variables.MediaQueries},
+		'postcss-calc': {},
 		'postcss-media-minmax': {},
+		
 		'css-mqpacker': {},
 		'cssnano': {}
 	}

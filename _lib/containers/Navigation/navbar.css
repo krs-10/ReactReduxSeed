@@ -1,0 +1,9 @@
+
+.root{
+	--background: var(--blue-6);
+	--color: var(--gray-5);
+
+	background: var(--background);
+	color: var(--color);
+	padding: var(--size);
+}

@@ -1,0 +1,58 @@
+/* WITH WRAPPER */
+
+.container{
+	display: block; 
+}
+
+.svg{
+	width: 1em; 
+	height: 1em; 
+	fill: inherit; 
+	margin: 0 auto;
+	display: block;
+}
+
+.inline{
+	display: inline-block; 
+	margin: auto; 
+	vertical-align: middle; 
+	padding-right: var(--size);
+	line-height: 1; 
+	.svg{
+		display: inline-block; 
+	}
+	&.baseline{
+		vertical-align: baseline; 
+	}
+}
+
+.unicode{
+	position: relative; 
+	width: 1em; 
+	height: 1em; 
+	font-style: inherit;
+	line-height: 1; 
+}
+
+.small{
+	width: 0.5em; 
+	height: 0.5em; 
+	&.unicode{
+		font-size: 2em; 
+	}
+}
+
+.large{
+	width: 2em; 
+	height: 2em;
+	&.unicode{
+		font-size: 2em; 
+	}
+}
+
+.close:before{
+	font-size: inherit; 
+	content: "\2715";
+}
+
+
