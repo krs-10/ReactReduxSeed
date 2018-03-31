@@ -1,14 +1,18 @@
 {
+  "plugins": [
+    // [ "@babel/plugin-transform-runtime", { "useESModules": false, "polyfill": true },
+    // ],
+    "@babel/plugin-proposal-export-default-from",
+    "@babel/plugin-proposal-class-properties"
+  ],
   "presets": [
     "@babel/preset-react",
     ["@babel/preset-env", {
       "targets": {
-        "browsers": ["last 3 versions"]
+        "browsers": ["last 3 versions"],
       },
-      "modules": false,
-      "useBuiltIns": "usage",
+      "useBuiltIns": "entry",
       "shippedProposals": true,
     }],
-    "@babel/preset-stage-0"
   ]
 }

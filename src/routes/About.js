@@ -1,10 +1,13 @@
+import { Section, Page } from 'containers';
 
 class About extends Component {
 	render(){
-		// console.log("SUBPAGE - Page, this :", Page, this);
-		// return super.render();
 		return (
-			<div>About Subpage</div>
+			<Page>
+				<Section>
+					<h1>About</h1>
+				</Section>
+			</Page>
 		)
 	}
 }

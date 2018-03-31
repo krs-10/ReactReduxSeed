@@ -1,43 +1,18 @@
-/* @import 'styles/variables.css'; */
 
 .root{
 	-webkit-appearance: none; 
 	border-width: 0 0 2px 0;
-	border-style: solid; 
-	border-radius: 0px;
 	cursor: pointer; 
-	padding: var(--size);
+	padding: var(--size) var(--size-double);
 	text-align: center; 
-	border-bottom: 2px solid var(--border, var(--gray-3));
-	color: var(--color, var(--blue-9));
-	fill: var(--color, var(--blue-9));
-	background: var(--background, var(--gray-2));
-	border-color: var(--border, var(--gray-3));
-	&:hover{
-		background: var(--background-hover, var(--gray-3));
-		color: var(--color-hover, var(--blue-9));
-		border-color: var(--border-hover, var(--gray-4));
-	}
+	display: block; 
 	&:focus{
-		background: var(--background-focus, var(--gray-2));
-		color: var(--color-focus, var(--blue-9));
-		border-color: var(--border-focus, var(--blue-5));
 		outline: none; 
-	}
-	&:disabled{
-		background: var(--background-disabled, var(--gray-1));
-		color: var(--color-disabled, var(--gray-5));
-		border-color: var(--border-disabled, var(--gray-3));
-	}
-	&:active{
-		background: var(--background-active, var(--pink-1));
-		color: var(--color-active, var(--white));
-		border-color: var(--border-active, var(--pink-1));
 	}
 }
 
 .small{
-	padding: var(--size-half) var(--size);
+	padding: var(--size-half) var(--size-double);
 }
 
 .plain{
@@ -47,60 +22,44 @@
 }
 
 .primary{
-	--background: var(--blue-5);
-	--color: var(--white);
-	--border: var(--blue-6);
-
-	--background-hover: var(--blue-6);
-	--border-hover: var(--blue-7);
-	--color-hover: var(--white);
-
-	--background-focus: var(--blue-5);
-	--border-focus: var(--pink-1);
-	--color-focus: var(--white);
-
-	--background-disabled: var(--blue-2);
-	--border-disabled: var(--blue-4);
-	--color-disabled: var(--white);
-
-	--background-active: var(--pink-1);
-	--border-active: var(--pink-1);
-	--color-active: var(--white);
+	--background: var(--background-button-primary);
+	--color: var(--color-button-primary);
+	--border: var(--border-button-primary);
 }
 
-.primary{
-	composes: root; 
-	color: var(--color);
+.secondary{
+	--background: var(--background-button-secondary);
+	--color: var(--color-button-secondary);
+	--border: var(--border-button-secondary);
+}
+
+.tertiary{
+	--background: var(--background-button-tertiary);
+	--color: var(--color-button-tertiary);
+	--border: var(--border-button-tertiary);
+}
+
+
+.primary, .secondary, .tertiary{
+	border-bottom: 2px solid var(--border);
 	background: var(--background);
-	border-color: var(--border);
+	color: var(--color);
 	fill: var(--color);
-	&:hover{
-		background: var(--background-hover);
-		color: var(--color-hover);
-		border-color: var(--border-hover);
-	}
-	&:focus{
-		background: var(--background-focus);
-		color: var(--color-focus);
-		border-color: var(--border-focus);
-	}
-	&:disabled{
-		background: var(--background-disabled);
-		color: var(--color-disabled);
-		border-color: var(--border-disabled);
-	}
-	&:active{
-		background: var(--background-active);
-		color: var(--color-active);
-		border-color: var(--border-active);
+	&.link{
+		color: var(--color);
+		display: inline-block; 
+		text-decoration: none; 
+		font-weight: 400; 
 	}
 }
+
+
 
 .group{
 	display: flex; 
 	flex-wrap: wrap; 
-	margin-left: -1px;
+	margin-left: calc(var(--size) * -1);
 	.root{
-		margin-left: 1px; 
+		margin-left: var(--size); 
 	}
 }

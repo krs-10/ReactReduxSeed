@@ -1,0 +1,35 @@
+:root{
+	/* --left: calc(20vw - var(--page-gutter));  */
+	--left:  10vw;
+	--right: 100%;
+}
+ 
+:global{
+ 
+	.hero-gradient{
+
+		/* background: -moz-linear-gradient(left, rgba(30,87,153,1) 0%, rgba(125,185,232,0) 100%); 
+		background: -webkit-linear-gradient(left, rgba(30,87,153,1) 0%,rgba(125,185,232,0) 100%); 
+		background: linear-gradient(to right, rgba(30,87,153,1) 0%,rgba(125,185,232,0) 100%);  */
+/* 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#007db9e8',GradientType=1 );  */
+		
+		
+		position: relative; 
+		z-index: 0; 
+		&:before{
+			content: ""; 
+			position: absolute; 
+			/* opacity: 0.2; */
+			/* opacity: 0.5;  */
+			/* background: var(--background); */
+			background-image: linear-gradient(to right, color(var(--blue-ebony-clay) a(100%)) var(--left), 
+				              color(var(--blue-ebony-clay) a(0%)) var(--right));
+			
+			height: 100%; 
+			top: 0;
+			z-index: -1; 
+			left: calc(-20vw - var(--page-gutter));
+			right: calc(var(--page-gutter) * -1);
+		}
+	}
+}

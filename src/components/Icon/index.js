@@ -27,6 +27,7 @@ import Left from 'assets/icons/svg/chevron_left.svg?jsx';
 import Cog from 'assets/icons/svg/cog.svg?jsx';
 import ZoomIn from 'assets/icons/svg/zoom_in.svg?jsx';
 import ZoomOut from 'assets/icons/svg/zoom_out.svg?jsx';
+import Time from 'assets/icons/svg/time.svg?jsx';
 
 const SvgComponents = {
 	calendar: Calendar,
@@ -52,7 +53,8 @@ const SvgComponents = {
 	unavailable: Unavailable,
 	warning: Warning,
 	zoom_in: ZoomIn, 
-	zoom_out: ZoomOut
+	zoom_out: ZoomOut, 
+	time: Time
 }
 
 const UnicodeComponents = {
@@ -66,11 +68,11 @@ const IconNames = [
 
 const propTypes = {
 	name: PropTypes.oneOf(IconNames, null),
-	interactive: PropTypes.bool,
+	interactive: PropTypes.oneOf([true, false, 'true', 'false']),
 	title: PropTypes.string,
-	small: PropTypes.bool,
-	large: PropTypes.bool,
-	inline: PropTypes.bool,
+	small: PropTypes.oneOf([true, false, 'true', 'false']),
+	large: PropTypes.oneOf([true, false, 'true', 'false']),
+	inline: PropTypes.oneOf([true, false, 'true', 'false']),
 	unicode: PropTypes.string
 };
 

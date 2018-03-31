@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="91px" height="61px" viewBox="0 0 91 61" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>education</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="41" y="0" width="48" height="55"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="education" transform="translate(2.000000, 0.929400)">
+            <g id="Rectangle-5">
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <rect stroke="#008296" stroke-width="3" x="42.5" y="1.5" width="45" height="52"></rect>
+            </g>
+            <g id="Group-12" transform="translate(3.000000, 3.000000)" fill="#FFFFFF" stroke="#008296" stroke-width="3">
+                <ellipse id="Oval-5" cx="10.5" cy="10" rx="10.5" ry="10"></ellipse>
+            </g>
+            <rect id="Rectangle-6" fill="#82D8E3" x="56" y="10" width="27" height="5"></rect>
+            <rect id="Rectangle-6" fill="#82D8E3" x="48" y="10" width="5" height="5"></rect>
+            <rect id="Rectangle-6" fill="#82D8E3" x="48" y="23" width="5" height="5"></rect>
+            <rect id="Rectangle-6" fill="#82D8E3" x="48" y="37" width="5" height="5"></rect>
+            <rect id="Rectangle-6" fill="#82D8E3" x="56" y="23" width="27" height="5"></rect>
+            <rect id="Rectangle-6" fill="#82D8E3" x="56" y="37" width="27" height="5"></rect>
+            <path d="" id="Path-5" stroke="#979797"></path>
+            <polygon id="Path-15" stroke="#008296" stroke-width="3" fill="#FFFFFF" points="4.27636364 27 0.203636364 31.7088608 0 58 27.0836364 58 27.0836364 39.164557 37.0618182 47.9936709 40.1163636 47.9936709 56 32.2974684 55.7963636 29.943038 52.9454545 27.7848101 49.8909091 28.1772152 39.0981818 38.9683544 25.2509091 27"></polygon>
+            <g id="Group-13" transform="translate(6.000000, 34.000000)" fill="#82D8E3">
+                <path d="M16.8585575,0.806492106 C14.8738908,2.14870313 11.9495934,2.91775763 9.40741316,2.99266915 C5.84482867,3.09768826 2.59130266,2.06870748 0.0879754428,0.269560035 C-0.108520686,0.128475354 0.0533051231,-0.0771937001 0.287167119,0.0296525251 C2.95882664,1.25318082 6.22964133,1.9408892 9.57518776,1.84222525 C11.8319188,1.77573433 14.2968577,1.30298944 16.5460599,0.409532562 C16.88542,0.274803046 17.1868566,0.584458501 16.8585575,0.806492106" id="Fill-1"></path>
+                <path d="M16.1985215,0.793347034 C15.9642279,0.510460165 14.7111936,0.707441664 14.1481527,0.795620522 C13.9776555,0.822415202 13.9460375,0.671959012 14.0967634,0.55666069 C15.0762017,-0.192291228 16.7277832,-0.0435401531 16.9269367,0.188761607 C17.1278512,0.422930875 16.9414249,2.10125222 16.0279442,2.93140014 C15.8873041,3.05887787 15.7475444,2.99846804 15.8062178,2.83437092 C15.999528,2.29165685 16.4330552,1.07639629 16.1985215,0.793347034" id="Fill-4"></path>
+            </g>
+        </g>
+    </g>
+</svg>

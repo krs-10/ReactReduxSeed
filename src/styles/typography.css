@@ -1,37 +1,113 @@
+
+
+
 :global{
-	/* h1, h2, h3, h4, h5, h6, p{
-		margin: 0;
-		line-height: 1.3;
+/* :local(), :global(){ */
+	:root{
+		--lh: var(--line-height);
+		--lh-margin: var(--rhythm);
+		/* --lh-margin: calc(var(--rhythm) / 2); */
 	}
-	h1, h2, h3{
+	/* h1, h2, h3,
+	.h1, .h2, .h3{
 		font-weight: 300; 
-	}
-	p { 
-		font-size: var(--p); 
-		margin-bottom: 2.6rem;
-	}
-	h1 { 
-		font-size: var(--h1); 
-		margin-bottom: 5.2rem;
-	}
-	h2 { 
-		font-size: var(--h2); 
-		margin-bottom: 3.9rem;
-	}
-	h3 { 
-		font-size: var(--h3); 
-		margin-bottom: 3.9rem;
-	}
-	h4 { 
-		font-size: var(--h4); 
-		margin-bottom: 2.6rem;
-	}
-	h5 { 		
-		font-size: var(--h5); 
-		margin-bottom: 2.6rem;
-	}
-	h6 { 		
-		font-size: var(--h6); 
-		margin-bottom: 2.6rem;
 	} */
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6{
+		font-family: 'Lato', serif; 
+		font-weight: 400; 
+	}
+	h1, h2, h3, h4, h5, h6, p, 
+	.h1, .h2, .h3, .h4, .h5, .h6, .p{
+		margin: 0 0 var(--rhythm) 0;
+		display: block; 
+	}
+	h1, .h1 { 
+		--heading-size: var(--h1);
+		--heading-size-fluid: var(--h1-fluid);
+		--heading-size-max: var(--h1-max);
+		line-height: var(--h1-lh);
+	}
+	h2, .h2 { 
+		--heading-size: var(--h2);
+		--heading-size-fluid: var(--h2-fluid);
+		--heading-size-max: var(--h2-max);
+		line-height: var(--h2-lh);
+	}
+	h3, .h3 { 
+		--heading-size: var(--h3);
+		--heading-size-fluid: var(--h3-fluid);
+		--heading-size-max: var(--h3-max);
+		line-height: var(--h3-lh);
+	}
+	h4, .h4{ 
+		--heading-size: var(--h4);
+		--heading-size-fluid: var(--h4-fluid);
+		--heading-size-max: var(--h4-max);
+		line-height: var(--h4-lh);
+	}
+	.p, p{ 
+		--heading-size: var(--p);
+		--heading-size-fluid: var(--p-fluid);
+		--heading-size-max: var(--p-max);
+		line-height: var(--p-lh);
+	}
+	h5, .h5 { 		
+		--heading-size: var(--h5);
+		--heading-size-fluid: var(--h5-fluid);
+		--heading-size-max: var(--h5-max);
+		line-height: var(--h5-lh);
+		
+	}
+	h6, .h6 { 		
+		--heading-size: var(--h6);
+		--heading-size-fluid: var(--h6-fluid);
+		--heading-size-max: var(--h6-max);
+		line-height: var(--h6-lh);
+	}
+
+	h1, h2, h3, h4, h5, h6, p,
+	.h1, .h2, .h3, .h4, .h5, .h6, .p{
+		font-size: var(--heading-size);
+		@media (--mobile){
+			font-size: var(--heading-size-fluid);
+		}
+		@media (--desktop){
+			font-size: var(--heading-size-max);
+		}
+	}
 }
+
+a{
+	color: var(--color-link);
+}
+
+:global{
+	.left { text-align: left; }
+	.center { text-align: center; }
+	.right { text-align: right; }
+	
+	.normal { font-weight: 400; }
+	.bold{ font-weight: 600; }
+	.italic{ font-style: italic; }
+	.thin {	font-weight: 300; }
+	.caps { text-transform: uppercase; }
+	.color-inherit{ color: inherit; }
+
+	@media (--desktop){
+		.lg-left { text-align: left; }
+		.lg-center { text-align: center; }
+		.lg-right { text-align: right; }
+	}
+	@media (--tablet){
+		.md-left { text-align: left; }
+		.md-center { text-align: center; }
+		.md-right { text-align: right; }
+	}
+	@media (--mobile){
+		.sm-left { text-align: left; }
+		.sm-center { text-align: center; }
+		.sm-right { text-align: right; }
+	}
+}
+

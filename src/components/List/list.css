@@ -1,6 +1,7 @@
 
 .root{
 	padding-left: var(--size);
+	margin-top: 0; 
 }
 
 .root .root{
@@ -8,8 +9,13 @@
 	margin-bottom: 0;
 }
 
+.collapsed{
+	margin-left: 0; 
+	padding-left: 0; 
+}
+
 .item{
-	padding-top: var(--size-half);
+	/* padding-top: var(--rhythm); */
 }
 
 .unordered{
@@ -24,6 +30,32 @@
 		}
 	}
 }
+
+.checked{
+	list-style-type: none; 
+}
+
+.checkedItem{
+	--fill: var(--fill-icon-inner); 
+
+	display: flex; 
+	align-items: center; 
+	flex-flow: row nowrap; 
+	.icon{
+		flex: 0 0 2em; 
+		max-width: 2em; 
+		margin-bottom: 0; 
+		fill: var(--fill-icon-inner); 
+		padding-right: var(--size);
+	}
+	.item{
+		flex: 0 1 auto; 
+	}
+}
+
+
+
+
 
 .plain{
 	list-style-type: none; 

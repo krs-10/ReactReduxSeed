@@ -1,0 +1,26 @@
+:root{
+	--background: var(--blue-deep-teal);
+}
+
+.root{
+	position: relative; 
+	color: var(--white);
+	overflow: hidden; 
+	background-position: 80% 0;
+	@media (--tablet){
+		background-size: cover; 
+		background-position: 40% 0; 
+	}
+
+	/* REMOVE AFTER DEMO */
+/* 	background-position: -50% 0;
+	@media (--tablet){
+		background-position: 0 0;
+	} */
+}
+
+.inner{
+	composes: container from global; 
+}
+
+

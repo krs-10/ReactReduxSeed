@@ -1,9 +1,14 @@
+import { Section, Page } from 'containers';
+
 class Home extends Component {
 	render(){
-		// console.log("SUBPAGE - Page, this :", Page, this);
-		// return super.render();
 		return (
-			<div>This is a Home subpage</div>
+			<Page>
+				<Section>
+					<h1>Home</h1>
+					<p>This is the homepage</p>
+				</Section>
+			</Page>
 		)
 	}
 }

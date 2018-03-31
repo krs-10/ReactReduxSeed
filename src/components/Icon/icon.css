@@ -2,19 +2,16 @@
 
 .container{
 	display: block; 
-}
+} 
 
 .svg{
-	width: 1em; 
-	height: 1em; 
 	fill: inherit; 
-	margin: 0 auto;
+	margin: 0;
 	display: block;
 }
 
 .inline{
 	display: inline-block; 
-	margin: auto; 
 	vertical-align: middle; 
 	padding-right: var(--size);
 	line-height: 1; 
@@ -28,25 +25,25 @@
 
 .unicode{
 	position: relative; 
-	width: 1em; 
-	height: 1em; 
+	width: 2rem; 
+	height: 2rem; 
 	font-style: inherit;
 	line-height: 1; 
 }
 
 .small{
-	width: 0.5em; 
-	height: 0.5em; 
+	width: 1rem; 
+	height: 1rem; 
 	&.unicode{
-		font-size: 2em; 
+		font-size: 1rem; 
 	}
 }
 
 .large{
-	width: 2em; 
-	height: 2em;
+	width: 4rem; 
+	height: 4rem;
 	&.unicode{
-		font-size: 2em; 
+		font-size: 4rem; 
 	}
 }
 

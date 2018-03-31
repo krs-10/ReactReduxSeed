@@ -1,0 +1,48 @@
+.root{
+	composes: row vertical wrap from 'styles/grid.css';
+}
+.tabs, .panels{
+	composes: column from 'styles/grid.css';
+}
+.tabs{
+	composes: row between nowrap from 'styles/grid.css';
+	/* border-bottom: 2px solid var(--gray-3); */
+}
+
+
+.tab{
+	
+	border: none; 
+	flex: 1 1 auto;
+	-webkit-appearance: none; 
+	outline: none; 
+	cursor: pointer; 
+	composes: column from 'styles/grid.css';
+	background: var(--background);
+/* 	border-style: solid; 
+	border-width: var(--spacing-half); */
+	text-align: center; 
+	border-bottom: 2px solid var(--gray-3);
+	
+	&.active{
+		color: var(--blue-5);
+		box-shadow: inset 0 calc(var(--size-half) * -1) orange;
+	}
+	padding-bottom: var(--spacing);
+}
+
+.panels{
+	> *{
+		margin-bottom: 0; 
+	}
+}
+
+
+.panel{
+
+	display: none;
+	&.active{
+		display: block; 
+	} 
+}
+

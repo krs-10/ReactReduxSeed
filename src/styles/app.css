@@ -1,27 +1,38 @@
+
 @font-face {
-  font-family: 'Amazon Ember';
+  font-family: 'Libre Baskerville';
   font-style: normal; 
-  font-weight: 300;
-  src: url('assets/fonts/AmazonEmber-Regular.eot');
-  src: local('Amazon Ember Regular'), local('AmazonEmber-Regular'),
-       url('assets/fonts/AmazonEmber-Regular.eot?#iefix') format('embedded-opentype'), 
-       url('assets/fonts/AmazonEmber-Regular.woff') format('woff'), 
-       url('assets/fonts/AmazonEmber-Regular.ttf') format('truetype'), 
-       url('assets/fonts/AmazonEmber-Regular.svg#AmazonEmber-Regular') format('svg'); 
+  font-weight: 400;
+  src: local('Libre Baskerville'), local('LibreBaskerville-Regular'),
+       url('assets/fonts/libre_baskerville/LibreBaskerville-Regular.WOFF') format('woff'); 
 }
 
 @font-face {
-  font-family: 'Amazon Ember';
+  font-family: 'Libre Baskerville';
   font-style: bold; 
-  font-weight: 600;
-  src: url('assets/fonts/AmazonEmber-Bold.eot');
-  src: local('Amazon Ember Bold'), local('AmazonEmber-Bold'),
-       url('assets/fonts/AmazonEmber-Bold.eot?#iefix') format('embedded-opentype'), 
-       url('assets/fonts/AmazonEmber-Bold.woff') format('woff'), 
-       url('assets/fonts/AmazonEmber-Bold.ttf') format('truetype'), 
-       url('assets/fonts/AmazonEmber-Bold.svg#AmazonEmber-Bold') format('svg'); 
+  font-weight: 700;
+  src: local('Libre Baskerville'), local('LibreBaskerville-Bold'),
+       url('assets/fonts/libre_baskerville/LibreBaskerville-Bold.WOFF') format('woff'); 
 }
 
-html{
-  font-family: 'Amazon Ember', sans-serif;
+@font-face {
+  font-family: 'Lato';
+  font-weight: 300;
+  src: local('Lato'), local('Lato-Light'),
+       url('assets/fonts/lato/Lato-Light.WOFF') format('woff'); 
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato'), local('Lato-Regular'),
+       url('assets/fonts/lato/Lato-Regular.WOFF') format('woff'); 
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-weight: 700;
+  src: local('Lato'), local('Lato-Bold'),
+       url('assets/fonts/lato/Lato-Bold.WOFF') format('woff'); 
 }

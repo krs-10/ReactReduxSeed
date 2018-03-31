@@ -6,9 +6,11 @@ const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const envConfig = env === 'production' ? require('./prod.config.js') : require('./dev.config.js');
 
+const envType = env === 'production' ? 'production' : 'development';
 
 const envPlugin = new webpack.DefinePlugin({
   'process.env': {
@@ -27,10 +29,47 @@ var vendors = [
   'react-router-redux',
   'history',
   'react-router-dom',
-  'react-css-modules'
+  'react-css-modules',
+  'reflexbox'
 ];
 
+
+const chunkB = {
+  cacheGroups: {
+    commons: {
+      name: 'commons',
+      chunks: 'all',
+      minChunks: 2,
+      enforce: true
+    }
+  }
+}
+
+const chunkTest = {
+  splitChunks: {
+    chunks: "async",
+    minSize: 30000,
+    minChunks: 1,
+    maxAsyncRequests: 5,
+    maxInitialRequests: 3,
+    name: true,
+    cacheGroups: {
+      "app": {
+        minChunks: 2, 
+        reuseExistingChunk: true,
+        priority: -20
+      },
+      "vendor": {
+        test: /[\\/]node_modules[\\/]/, 
+        name: "vendor",
+        priority: -10
+      },
+    }, 
+  }
+}
+
 const baseConfig = {
+  optimization: chunkTest,
   resolve: {
     modules: [path.resolve(__dirname, "src"), 'node_modules'],
     extensions: ['.js', '.jsx', '.css', '.md'],
@@ -41,24 +80,28 @@ const baseConfig = {
       'modules': path.resolve(__dirname, "src/modules"),
       'routes': path.resolve(__dirname, "src/routes"),
       'styles': path.resolve(__dirname, "src/styles"),
-      'lib': path.resolve(__dirname, "lib")
     }
   },
   context: path.resolve(__dirname, 'src'),
   entry: {
     app: "./index.js",
-    vendor: vendors
+
+    // vendor: vendors, 
   },
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
+    publicPath: '',
     pathinfo: false
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
+        include: [
+          path.resolve(__dirname, 'src'),
+          path.resolve(__dirname, 'src/styles')
+        ], 
         exclude: /node_modules/,
         use: [{
           loader: 'babel-loader'
@@ -87,8 +130,8 @@ const baseConfig = {
           loader: 'url-loader', 
           options: {
             limit: 10000, 
-            emitFile: false
-            // name: '[path][name].[ext]'
+            emitFile: false,
+            name: '[path][name].[ext]'
           }
         },
       },
@@ -98,15 +141,16 @@ const baseConfig = {
     envPlugin,
     new HtmlWebpackPlugin({template: 'index.html'}),
     new CopyWebpackPlugin([{from: 'assets', to: 'assets'}]),
-    new webpack.optimize.CommonsChunkPlugin({ names: ["app", "vendor"] }),
     new webpack.ProvidePlugin({
       'React': 'react',
       'Component': ['react', 'Component'],
       'Fragment': ['react', 'Fragment'],
       'PropTypes': 'prop-types',
       'cx': 'classnames/bind',
-      'CSSModules': 'react-css-modules'
-    })
+      'CSSModules': 'react-css-modules',
+      '_Row': ['reflexbox', 'Flex'],
+      '_Col': ['reflexbox', 'Box']
+    }),
   ]
 };
 

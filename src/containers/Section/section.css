@@ -1,0 +1,34 @@
+.root{
+	padding: var(--spacing) 0;
+}
+
+.inner{
+	composes: container from 'styles/layout.css';
+}
+
+.primary{
+	--background: var(--background-section-primary);
+	--color: var(--color-section-primary);
+	composes: antialias from global; 
+}
+
+.secondary{
+	--background: var(--background-section-secondary);
+	--color: var(--color-section-secondary);
+}
+
+.primary, .secondary{
+	background: var(--background);
+	color: var(--color); 
+}
+
+.bleed{
+	/* overflow: hidden;  */
+	padding: 0;
+	.inner{
+		padding: 0; 
+		overflow: hidden; 
+		/* padding-left: calc(var(--page-gutter) / 2);
+		padding-right: calc(var(--page-gutter) / 2); */
+	}
+}

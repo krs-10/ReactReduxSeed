@@ -7,15 +7,10 @@ import { history } from './store';
 import { Navigation } from 'containers';
 import Routes, { RoutesObject } from 'routes';
 
-
-
 const App = (props) => {
 	return (
-		<ConnectedRouter history={history}>
-		      <div>
-			      	<Navigation links={RoutesObject.children} />
-			      	<Routes />
-		      </div>
+		<ConnectedRouter history={history} {...props}>
+			<Routes {...props} />
 	     </ConnectedRouter>
 	  );
 }

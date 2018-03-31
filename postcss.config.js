@@ -9,28 +9,26 @@ const customPropertiesJSON = Object.entries(customProperties).reduce((total, cur
 	return total; 
 }, {});
 
-
+const postcssNext = {
+	browsers: ['last 3 versions'],
+	features: {
+		calc: {precision: 3},
+		customProperties: { variables: customProperties, warnings: false},
+		nesting: false,
+		customMedia: {extensions: Variables.MediaQueries},
+	}
+}
 
 const postcssConfig = module.exports = {
-	// sourceMap: true,
 	from: './src/styles/app.css',
 	to: './dist/styles.css',
 	plugins: {
-		'postcss-url': {},
 		'postcss-discard-comments': {},
 		'postcss-each': {},
 		'postcss-for': {},
 		'postcss-conditionals': {},
 		'postcss-nesting': {},
 		'postcss-nested': {},
-		'postcss-color-function': {},
-
-		'postcss-custom-properties': {variables: customProperties, warnings: false, preserve: false},
-		'postcss-custom-media': {extensions: Variables.MediaQueries},
-		'postcss-calc': {},
-		'postcss-media-minmax': {},
-		
-		'css-mqpacker': {},
-		'cssnano': {}
+		'postcss-cssnext': postcssNext,
 	}
 }
