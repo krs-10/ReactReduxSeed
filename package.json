@@ -10,11 +10,11 @@
     "node": ">=8.3.0"
   },
   "scripts": {
-    "start": "node server.js",
-    "prod": "NODE_ENV='production' webpack",
-    "dev": "webpack-dev-server --watch --colors",
-    "testout": "babel-node && webpack-dev-server --watch --colors",
-    "deploy": "NODE_ENV='production' webpack && zip -r artifact.zip dist package.json server.js && eb deploy"
+    "nv": "npm config set engine-strict true",
+    "start": "npm run nv && node server.js",
+    "prod": "npm run nv && NODE_ENV='production' webpack",
+    "dev": "npm run nv && webpack-dev-server --watch --colors",
+    "deploy": "npm run nv && NODE_ENV='production' webpack && zip -r artifact.zip dist package.json server.js && eb deploy"
   },
   "dependencies": {
     "@babel/core": "^7.0.0-beta.42",
@@ -74,6 +74,7 @@
     "postcss-discard-comments": "^2.0.4",
     "postcss-each": "^0.10.0",
     "postcss-for": "^2.1.1",
+    "postcss-functions": "^3.0.0-beta.2",
     "postcss-loader": "^2.1.1",
     "postcss-media-minmax": "^3.0.0",
     "postcss-nested": "^3.0.0",

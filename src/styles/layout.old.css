@@ -60,11 +60,9 @@
 		font-size: var(--root-font-size);
 		line-height: var(--line-height); 
 		margin: 0;
-		/* width: convert(var(--root-font-size), 'em'); */
-		/* width: calc(var(--root-font-size) / 1rem); */
+
 		@media (--mobile){
-			/* font-size: var(--root-font-size-fluid); */
-			font-size: vfont(var(--root-font-size), var(--root-font-size-max), var(--vw-min), var(--vw-max));
+			font-size: var(--root-font-size-fluid);
 		}
 		@media (--desktop){
 			font-size: var(--root-font-size-max);

@@ -46,6 +46,12 @@
 		--heading-size-max: var(--h4-max);
 		line-height: var(--h4-lh);
 	}
+	.p, p{ 
+		--heading-size: var(--p);
+		--heading-size-fluid: var(--p-fluid);
+		--heading-size-max: var(--p-max);
+		line-height: var(--p-lh);
+	}
 	h5, .h5 { 		
 		--heading-size: var(--h5);
 		--heading-size-fluid: var(--h5-fluid);
@@ -60,8 +66,8 @@
 		line-height: var(--h6-lh);
 	}
 
-	h1, h2, h3, h4, h5, h6,
-	.h1, .h2, .h3, .h4, .h5, .h6{
+	h1, h2, h3, h4, h5, h6, p,
+	.h1, .h2, .h3, .h4, .h5, .h6, .p{
 		font-size: var(--heading-size);
 		@media (--mobile){
 			font-size: var(--heading-size-fluid);
@@ -69,8 +75,6 @@
 		@media (--desktop){
 			font-size: var(--heading-size-max);
 		}
-/* 		font-size: responsive var(--heading-size) var(--heading-size-max);
-		font-range: var(--bp-max) var(--bp-mobile); */
 	}
 }
 

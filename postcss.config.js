@@ -1,5 +1,6 @@
 const path = require('path');
 const Variables = require('./src/styles/variables/index');
+const Functions = require('./css.functions.js');
 
 const customProperties = Object.assign({}, Variables.Colors, Variables.Sizes, Variables.Easings);
 
@@ -30,5 +31,6 @@ const postcssConfig = module.exports = {
 		'postcss-nesting': {},
 		'postcss-nested': {},
 		'postcss-cssnext': postcssNext,
+		'postcss-functions': {functions: Functions}
 	}
 }

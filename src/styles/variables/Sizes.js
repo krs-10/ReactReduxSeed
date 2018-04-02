@@ -81,6 +81,8 @@ const MAX_VIEWPORT = getRem(round(MEDIA_DESKTOP), SPACING, false);
 
 const FLUID_FONT = getFluidFont(MIN_FONT, MAX_FONT, MIN_VIEWPORT, MAX_VIEWPORT);
 
+console.log("SIZES.JS - MIN_VIEWPORT, MAX_VIEWPORT :", MIN_VIEWPORT, MAX_VIEWPORT);
+
 const H1F = ramp(4, 3.2, 4, LINE_HEIGHT, SPACING); 
 const H2F = ramp(3.2, 2.4, 3.2, LINE_HEIGHT, SPACING); 
 const H3F = ramp(2.4, 2, 2.4, LINE_HEIGHT, SPACING); 
@@ -156,6 +158,9 @@ const Sizes = module.exports = {
 	"gutter-desktop":  getRem(GUTTER_DESKTOP, SPACING),
 	"gutter-margin-desktop":  getRem(-GUTTER_DESKTOP, SPACING),
 	"page-gutter-desktop": getRem(PAGE_GUTTER_DESKTOP, SPACING),
+
+	"vw-max": `${MAX_VIEWPORT}rem`,
+	"vw-min": `${MIN_VIEWPORT}rem`,
 
 	"bp-max": `${round(MEDIA_MAX / 16)}em`, 
 	"bp-max-rem": getRem(MEDIA_MAX, SPACING),

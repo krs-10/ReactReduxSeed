@@ -6043,6 +6043,15 @@ postcss-for@^2.1.1:
     postcss "^5.0.0"
     postcss-simple-vars "^2.0.0"
 
+postcss-functions@^3.0.0-beta.2:
+  version "3.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/postcss-functions/-/postcss-functions-3.0.0-beta.2.tgz#03bee3bcc00aa1cfb21cb0605de8d0bf9ccc63ed"
+  dependencies:
+    glob "^7.1.2"
+    object-assign "^4.1.1"
+    postcss "^6.0.1"
+    postcss-value-parser "^3.3.0"
+
 postcss-image-set-polyfill@^0.3.5:
   version "0.3.5"
   resolved "https://registry.yarnpkg.com/postcss-image-set-polyfill/-/postcss-image-set-polyfill-0.3.5.tgz#0f193413700cf1f82bd39066ef016d65a4a18181"

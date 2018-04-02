@@ -70,7 +70,7 @@ const cssBase = {
 
 const Chunk1 = {
   ...cssBase, 
-  use: [styleLoader, cssLoader, postcssLoader],
+  use: [ MiniCssExtractPlugin.loader, cssLoader, postcssLoader ],
   include: [
       path.resolve(__dirname, 'src/styles'),
     ]
@@ -85,6 +85,7 @@ const Chunk2 = {
     exclude: [
       path.resolve(__dirname, 'src/styles')
     ]
+  
 }
 
 
