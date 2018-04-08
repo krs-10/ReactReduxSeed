@@ -148,8 +148,8 @@ const baseConfig = {
       'PropTypes': 'prop-types',
       'cx': 'classnames/bind',
       'CSSModules': 'react-css-modules',
-      '_Row': ['reflexbox', 'Flex'],
-      '_Col': ['reflexbox', 'Box']
+      '_Flex': ['reflexbox', 'Flex'],
+      '_Box': ['reflexbox', 'Box']
     }),
   ]
 };

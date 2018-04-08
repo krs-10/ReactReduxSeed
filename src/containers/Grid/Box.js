@@ -1,18 +1,60 @@
 import CSSModules from 'react-css-modules';
 import { reflex } from 'reflexbox';
-import {Sizes as s} from 'styles/variables';
-import styles from 'styles/grid.css';
+import { css } from 'glamor';
 
-const defaults = {
-	breakpoints: [s['bp-mobile'], s['bp-tablet'], s['bp-desktop']]
+
+const Sizes = require('styles/variables/Sizes.js');
+const { 'gutter-mobile' : gutter, 'gutter-desktop': gutterDesktop } = Sizes; 
+
+// const padding = [ gutter, gutterDesktop, gutterDesktop ];
+const padding = [
+'1rem', 
+'2rem', 
+'2rem'
+];
+
+const demoStyles = {
+	// 'background': 'lavender'
+};
+
+
+const marginRhythm = () => {
+	return css(
+		{
+			'> *': {
+				marginBottom: '0'
+			}
+		}
+	)
 }
-console.log("hi - defaults :", defaults);
+
+
+const flexProp = (arg) => {
+	return css(
+		{
+		'flex': `${arg}`
+		}
+	);
+};
 
 class Box extends Component{
 	render(){
-		const {children, ...rest} = this.props; 
+		const {children, className, px = padding, dynamic = false, ...rest} = this.props; 
+		const setFlex = dynamic ? flexProp(dynamic) : '';
+		const classes = cx(
+			[`${setFlex}`], 
+			"box",
+			className
+		);
+
 		return (
-			<div className="box" {...defaults} {...rest}>{children}</div>
+			<_Box
+				className={classes}
+				style={demoStyles}
+				px={px}
+				{...rest}>
+					{children}
+			</_Box>
 		)
 	}
 }

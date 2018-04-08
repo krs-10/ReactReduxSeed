@@ -1,21 +1,21 @@
 {
   "name": "ReactReduxSeed",
-  "version": "1.0.0",
-  "description": "Personal starter kit for React/Redux/CSS Modules projects",
-  "main": "index.js",
-  "author": "Kristen Overberg",
-  "license": "MIT",
-  "private": true,
-  "engines": {
-    "node": ">=8.3.0"
-  },
-  "scripts": {
-    "nv": "npm config set engine-strict true",
-    "start": "npm run nv && node server.js",
-    "prod": "npm run nv && NODE_ENV='production' webpack",
-    "dev": "npm run nv && webpack-dev-server --watch --colors",
-    "deploy": "npm run nv && NODE_ENV='production' webpack && zip -r artifact.zip dist package.json server.js && eb deploy"
-  },
+    "version": "1.0.1",
+    "description": "Personal starter kit for React/Redux/CSS Modules projects",
+    "main": "index.js",
+    "author": "Kristen Overberg",
+    "license": "MIT",
+    "private": true,
+    "engines": {
+      "node": ">=8.3.0"
+    },
+    "scripts": {
+      "nv": "npm config set engine-strict true",
+      "start": "npm run nv && node server.js",
+      "prod": "npm run nv && NODE_ENV='production' webpack",
+      "dev": "npm run nv && webpack-dev-server --watch --colors",
+      "deploy": "npm run nv && NODE_ENV='production' webpack && zip -r artifact.zip dist package.json server.js && eb deploy"
+    },
   "dependencies": {
     "@babel/core": "^7.0.0-beta.42",
     "@babel/polyfill": "^7.0.0-beta.42",
@@ -67,6 +67,7 @@
     "postcss-calc": "^6.0.1",
     "postcss-color-function": "^4.0.1",
     "postcss-conditionals": "^2.1.0",
+    "postcss-css-variables": "^0.8.1",
     "postcss-cssnext": "^3.1.0",
     "postcss-custom-media": "^6.0.0",
     "postcss-custom-properties": "^7.0.0",

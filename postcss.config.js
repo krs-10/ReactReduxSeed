@@ -14,15 +14,17 @@ const postcssNext = {
 	browsers: ['last 3 versions'],
 	features: {
 		calc: {precision: 3},
-		customProperties: { variables: customProperties, warnings: false},
+		// customProperties: { variables: customProperties, warnings: false},
+		customProperties: false,
 		nesting: false,
 		customMedia: {extensions: Variables.MediaQueries},
 	}
 }
 
-const postcssConfig = module.exports = {
+const postcssConfig = {
 	from: './src/styles/app.css',
 	to: './dist/styles.css',
+	exec: true,
 	plugins: {
 		'postcss-discard-comments': {},
 		'postcss-each': {},
@@ -30,7 +32,40 @@ const postcssConfig = module.exports = {
 		'postcss-conditionals': {},
 		'postcss-nesting': {},
 		'postcss-nested': {},
-		'postcss-cssnext': postcssNext,
+		'postcss-custom-properties': {
+			variables: Object.assign({}, Variables.Colors, Variables.Sizes, Variables.Easings),
+			warnings: false, 
+			preserve: 'computed'
+		},
+		'postcss-calc': {precision: 3}, 
+		'postcss-custom-media': {extensions: Variables.MediaQueries},
+		'postcss-media-minmax': {},
 		'postcss-functions': {functions: Functions}
 	}
 }
+
+// const postcssConfig = {
+// 	from: './src/styles/app.css',
+// 	to: './dist/styles.css',
+// 	plugins: 
+// 		[
+
+// 			require('postcss-discard-comments'),
+// 			require('postcss-each'),
+// 			require('postcss-for'), 
+// 			require('postcss-conditionals'),
+// 			require('postcss-nesting'),
+// 			require('postcss-nested'),
+// 			require('postcss-custom-properties')({
+// 				variables: {...require('./src/styles/variables/index')},
+// 				warnings: false, 
+// 				preserve: false
+// 			}),
+// 			require('postcss-calc')({precision: 3}), 
+// 			require('postcss-custom-media')({extensions: Variables.MediaQueries}),
+// 			require('postcss-media-minmax'),
+// 			require('postcss-functions')({functions: Functions})
+// 		]
+// }
+
+module.exports = postcssConfig; 

@@ -1,3 +1,4 @@
+import { Flex, Box } from 'containers/Grid';
 import styles from './block.css';
 
 const propTypes = {
@@ -19,7 +20,7 @@ class Block extends Component {
 	static propTypes = propTypes
 	static defaultProps = defaultProps
 	render(){
-		const { children, className, full, primary, secondary, tertiary, center = false, ...rest} = this.props; 
+		const { children, className, full, primary, secondary, tertiary, center = false, mx = 0,  ...rest} = this.props; 
 		const cxb = cx.bind(styles);
 
 		const classes = cxb(
@@ -29,12 +30,13 @@ class Block extends Component {
 			{'center': center},
 			className
 		);
+
+
+
 		return (
-			<div styleName="root" className={classes} {...rest}>
-				<div styleName="content">
-					{children}
-				</div>
-			</div>
+			<Flex styleName="root" column={true} mx={mx} className={classes} {...rest}>
+				{children}
+			</Flex>
 		)
 	}
 }

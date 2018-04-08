@@ -1,14 +1,5 @@
 const path = require('path');
 
-
-
-// const commonPlugins = [
-//   [
-//     require.resolve("@babel/plugin-proposal-export-default-from"),
-//     require.resolve("@babel/plugin-proposal-class-properties"),
-//   ],
-// ];
-
 const reactPreset = require.resolve('@babel/preset-react');
 const prodEnvPreset = [
   require.resolve('@babel/preset-env'),

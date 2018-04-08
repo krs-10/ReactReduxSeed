@@ -4,30 +4,31 @@ const round = (num, fix = 3) => {
 	return rounded; 
 }
 
-const ramp = (curr, min, max, lh, rem) => {
-	curr = +curr, 
+
+const ramp = (min, max, min_base, max_base, lh, rem) => {
 	lh = +lh,
 	min = +min, 
-	max = +max; 
+	max = +max,
+	min_base = +min_base, 
+	max_base = +max_base;
 
-	const diff = max / min; 
-	const currMin = curr; 
-	const currMax = round(curr * diff);
-	const lhMin = round(lh * min);
-	const lhMax = round(lh * max);
+	const diff = max_base / min_base; 
+	const min_lh = round(lh * min_base);
+	const max_lh = round(lh * max_base);
 
-	let multiplier = Math.ceil(currMin / lhMin);
-
+	let multiplier = Math.ceil(min / min_lh);
 	if (multiplier > 1){
-		multiplier = (lh * multiplier) < currMin ? multiplier : lh; 
+		multiplier = (lh * multiplier) < min ? multiplier : lh; 
 	}
-	if (lhMin < curr) multiplier = multiplier * lh; 
+	if (min_lh < min) multiplier = multiplier * lh; 
 
-	let lineHeight = round((lhMin / currMin) * multiplier); 
-	if (currMin > min && lineHeight > lh ) lineHeight = lineHeight / lh;
+	let lineHeight = round((min_lh / min) * multiplier); 
+	if (min > min_base && lineHeight > lh ) lineHeight = lineHeight / lh;
 
-	return { min: currMin, max: currMax, lh: `${lineHeight}` };
+	const finalRamp = { min: min, max: max, lh: `${round(lineHeight)}` };
+	return finalRamp; 
 }
+
 
 const getRem = (size, rem, string = true) => {
 	size = +size, rem = +rem;
@@ -52,7 +53,9 @@ const getFluidFont = (s1, s2, v1, v2) => {
 	}
 }
 
+
 const FONT = 16; 
+// const FONT = 36; 
 const FONT_MAX = 18; 
 const LINE_HEIGHT = 1.4;
 const LINE_HEIGHT_MAX = 1.6; 
@@ -65,14 +68,6 @@ const MEDIA_DESKTOP = 1024;
 const MEDIA_TABLET = 600;
 const MEDIA_MOBILE = 480;
 
-const SPACING_DESKTOP = 15; 
-const GUTTER_DESKTOP = 10;
-const PAGE_GUTTER_DESKTOP = 20; 
-
-const SPACING_MOBILE = 20; 
-const GUTTER_MOBILE = 15;
-const PAGE_GUTTER_MOBILE = 20; 
-
 const MIN_FONT = getRem(round(FONT), SPACING, false);
 const MAX_FONT = getRem(round(FONT_MAX), SPACING, false);
 
@@ -81,23 +76,34 @@ const MAX_VIEWPORT = getRem(round(MEDIA_DESKTOP), SPACING, false);
 
 const FLUID_FONT = getFluidFont(MIN_FONT, MAX_FONT, MIN_VIEWPORT, MAX_VIEWPORT);
 
-console.log("SIZES.JS - MIN_VIEWPORT, MAX_VIEWPORT :", MIN_VIEWPORT, MAX_VIEWPORT);
 
-const H1F = ramp(4, 3.2, 4, LINE_HEIGHT, SPACING); 
-const H2F = ramp(3.2, 2.4, 3.2, LINE_HEIGHT, SPACING); 
-const H3F = ramp(2.4, 2, 2.4, LINE_HEIGHT, SPACING); 
-const H4F = ramp(2, 1.8, 2, LINE_HEIGHT, SPACING); 
-const H5F = ramp(1.4, 1.2, 1.4, LINE_HEIGHT, SPACING); 
-const H6F = ramp(1.2, 1.0, 1.2, LINE_HEIGHT, SPACING); 
-const PF = ramp(1.8, 1.6, 1.8, LINE_HEIGHT, SPACING); 
+const H1F = ramp(3.2, 4, MIN_FONT, MAX_FONT, LINE_HEIGHT, SPACING); 
+const H2F = ramp(2.4, 3.2, MIN_FONT, MAX_FONT, LINE_HEIGHT, SPACING); 
+const H3F = ramp(2, 2.4, MIN_FONT, MAX_FONT, LINE_HEIGHT, SPACING); 
+const H4F = ramp(1.8, 2, MIN_FONT, MAX_FONT, LINE_HEIGHT, SPACING); 
+const H5F = ramp(1.2, 1.4, MIN_FONT, MAX_FONT, LINE_HEIGHT, SPACING); 
+const H6F = ramp(1.0, 1.2, MIN_FONT, MAX_FONT, LINE_HEIGHT, SPACING); 
+const PF = ramp(1.6, 1.8, MIN_FONT, MAX_FONT, LINE_HEIGHT, SPACING); 
 
-const H1 = getFluidFont(3.2, 4, MIN_VIEWPORT, MAX_VIEWPORT);
-const H2 = getFluidFont(2.4, 3.2, MIN_VIEWPORT, MAX_VIEWPORT);
-const H3 = getFluidFont(2.0, 2.4, MIN_VIEWPORT, MAX_VIEWPORT);
-const H4 = getFluidFont(1.8, 2, MIN_VIEWPORT, MAX_VIEWPORT);
-const H5 = getFluidFont(1.4, 1.6, MIN_VIEWPORT, MAX_VIEWPORT);
-const H6 = getFluidFont(1.2, 1.4, MIN_VIEWPORT, MAX_VIEWPORT);
-const P = getFluidFont(1.6, 1.8, MIN_VIEWPORT, MAX_VIEWPORT);
+const H1 = getFluidFont(H1F.min, H1F.max, MIN_VIEWPORT, MAX_VIEWPORT);
+const H2 = getFluidFont(H2F.min, H2F.max, MIN_VIEWPORT, MAX_VIEWPORT);
+const H3 = getFluidFont(H3F.min, H3F.max, MIN_VIEWPORT, MAX_VIEWPORT);
+const H4 = getFluidFont(H4F.min, H4F.max, MIN_VIEWPORT, MAX_VIEWPORT);
+const H5 = getFluidFont(H5F.min, H5F.max, MIN_VIEWPORT, MAX_VIEWPORT);
+const H6 = getFluidFont(H6F.min, H6F.max, MIN_VIEWPORT, MAX_VIEWPORT);
+const P = getFluidFont(PF.min, PF.max, MIN_VIEWPORT, MAX_VIEWPORT);
+
+const RHYTHM = 15; 
+const SPACING_MOBILE = 30; 
+const GUTTER_MOBILE = 15;
+const PAGE_GUTTER_MOBILE = 20; 
+
+
+const RHYTHM_DESKTOP = 20; 
+const SPACING_DESKTOP = 50; 
+const GUTTER_DESKTOP = 20;
+const PAGE_GUTTER_DESKTOP = 40; 
+
 
 const Sizes = module.exports = {
 
@@ -149,24 +155,36 @@ const Sizes = module.exports = {
 	"size-double": "2rem", 
 	"size-triple": "3rem", 
 
-	"spacing-mobile": getRem(SPACING_MOBILE, SPACING),
-	"gutter-mobile":  getRem(GUTTER_MOBILE, SPACING), 
-	"gutter-margin-mobile":  getRem(GUTTER_MOBILE, SPACING),
-	"page-gutter-mobile": getRem(PAGE_GUTTER_MOBILE, SPACING),
 
 	"spacing-desktop":  getRem(SPACING_DESKTOP, SPACING),
+	"spacing-mobile": getRem(SPACING_MOBILE, SPACING),
+
 	"gutter-desktop":  getRem(GUTTER_DESKTOP, SPACING),
+	"gutter-mobile":  getRem(GUTTER_MOBILE, SPACING), 
+
 	"gutter-margin-desktop":  getRem(-GUTTER_DESKTOP, SPACING),
+	"gutter-margin-mobile":  getRem(-GUTTER_MOBILE, SPACING),
+
 	"page-gutter-desktop": getRem(PAGE_GUTTER_DESKTOP, SPACING),
+	"page-gutter-mobile": getRem(PAGE_GUTTER_MOBILE, SPACING),
+
+	"rhythm-mobile": getRem(RHYTHM, SPACING),
+	"rhythm-desktop": getRem(RHYTHM_DESKTOP, SPACING),
 
 	"vw-max": `${MAX_VIEWPORT}rem`,
 	"vw-min": `${MIN_VIEWPORT}rem`,
 
-	"bp-max": `${round(MEDIA_MAX / 16)}em`, 
+	// "bp-max": `${round(MEDIA_MAX / 16)}em`, 
+	// "bp-max-rem": getRem(MEDIA_MAX, SPACING),
+	// "bp-desktop": `${round(MEDIA_DESKTOP / 16)}em`, 
+	// "bp-tablet": `${round(MEDIA_TABLET / 16)}em`, 
+	// "bp-mobile": `${round(MEDIA_MOBILE / 16)}em`, 
+
+	"bp-max": `${80}em`, 
 	"bp-max-rem": getRem(MEDIA_MAX, SPACING),
-	"bp-desktop": `${round(MEDIA_DESKTOP / 16)}em`, 
-	"bp-tablet": `${round(MEDIA_TABLET / 16)}em`, 
-	"bp-mobile": `${round(MEDIA_MOBILE / 16)}em`, 
+	"bp-desktop": `${64}em`, 
+	"bp-tablet": `${37}em`, 
+	"bp-mobile": `${30}em`, 
 
 	"ease-out-quad": "cubic-bezier(0.250, 0.460, 0.450, 0.940)",
 	"ease-in-quad": "cubic-bezier(0.550, 0.085, 0.680, 0.530)",

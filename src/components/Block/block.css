@@ -1,11 +1,11 @@
 .root{
 	padding: var(--gutter);
-	display: flex; 
-	flex-flow: column wrap;
+/* 	display: flex; 
+	flex-flow: column wrap; */
 }
 
 .content{
-	flex-grow: 1; 
+/* 	flex-grow: 1;  */
 }
 
 .primary{
@@ -29,6 +29,6 @@
 	color: var(--color); 
 }
 
-.center{
+/* .center{
 	justify-content: center; 
-}
+} */

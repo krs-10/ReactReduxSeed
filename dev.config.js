@@ -13,34 +13,6 @@ const devoEntryOnly = {
     enforce: true
 }
 
-// const inlineCssRule = {
-//   test: /\.css$/,
-//   include: [
-//     path.resolve(__dirname, 'src'),
-//     path.resolve(__dirname, '_lib')
-//   ],
-//   use: [
-//     {
-//       loader: 'style-loader', options: {
-//         insertAt: 'top'
-//       }
-//     },
-//     {
-//       loader: 'css-loader', options: { 
-//           importLoaders: 1,
-//           sourceMaps: true,
-//           modules: true,
-//           localIdentName: '[name]_[local]',
-//           alias: {
-//             'styles': path.resolve(__dirname, "src/styles"),
-//             'lib': path.resolve(__dirname, "_lib")
-//           }
-//         }
-//     },
-//     'postcss-loader'
-//   ]
-// };
-
 const styleLoader = {
     loader: 'style-loader', options: {
       insertAt: 'top', 
